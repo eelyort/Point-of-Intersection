@@ -16,8 +16,8 @@ shuttleCock.src = "SunsetFromACliff.png";
 //Listeners
 leg.addEventListener('load', function() {legLoaded = true;}, false);
 shuttleCock.addEventListener('load', function() {shuttleCockLoaded = true;}, false);
-document.addEventListener("click", function(){clickDetected();});
-document.addEventListener('touchstart', function(e){clickDetected();}, false);
+document.addEventListener("click", function(){clickDetected("click");});
+document.addEventListener('touchstart', function(e){clickDetected("touch");}, false);
 
 var pressedPlay = false;
 
@@ -145,10 +145,10 @@ function clickDetected(typeEvent){
 	}
 	
 	if(gameOver){
-		/*if(typeEvent == "touch"){
+		if(typeEvent == "touch"){
 			tappedToReplay = true;
 			
-		}*/
+		}
 		
 		if (typeEvent == "touch"){
 			isMobile = true;
@@ -170,28 +170,22 @@ function clickDetected(typeEvent){
 		return;
 	}
 	
-	/*if(afterTappedToReplay){
+	if(afterTappedToReplay){
 		afterTappedToReplay = false;
-		console.log("touchEvent detected");
 		return;
-	}*/
+	}
 	
 	if(tapToPlayScreenUp){
 		
 		if(tappedToReplay){
 			tappedToReplay = false;
-			/*if(typeEvent == "touch"){
+			if(typeEvent == "touch"){
 				afterTappedToReplay = true;
-				tT++;
-			}*/
+			}
 			return;
 		}
 			
 		tapToPlayScreenUp = false;
-		/*if(typeEvent == "touch"){
-			tT++;
-		}*/
-	
 		
 		return;
 	}
@@ -230,7 +224,7 @@ function drawGameOverScreen(){
 	
 	ctx.font = "30px avenir";
 	ctx.fillStyle = "black";
-	ctx.fillText("Version 1.76", 50, 50);
+	ctx.fillText("Version 1.77", 50, 50);
 }
 
 function drawLoadingMessage() {
