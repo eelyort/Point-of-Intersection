@@ -23,11 +23,11 @@ function draw() {
 	x += dx;
 	y += dy;
 	
-	if(x + dx > canvas.width - ballRadius || x + dx < 0) {
+	if(x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
 		dx = -dx;
 	}
 
-	if(y + dy > canvas.height - ballRadius || y + dy < 0) {
+	if(y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
 		dy = -dy;
 	}
 }
