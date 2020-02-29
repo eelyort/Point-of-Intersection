@@ -12,18 +12,19 @@ html {
 
 header {
     background-color: #bc340a;
-    width: 100vw;
     margin-left: -0.5em;
+    margin-right: -0.5em;
+
     margin-top: -1.25em;
     color: white;
     text-transform: uppercase;
-    padding-top: 10px;
+    padding-top: 6px;
     /*position: absolute;*/
     /*left: 0;*/
     /*top: 0;*/
     /*height: 6vh;*/
     height: 100px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     /*
     border-bottom:1px solid #CCC;
     */
@@ -47,8 +48,9 @@ header h1 {
     /*max-width: 60vw;*/
     padding-left: 10vw;
     padding-right: 10vw;
-    line-height: 28px;
+    line-height: 25px;
     color: white;
+    padding-bottom: 10px;
 }
 
 .diamond-para-break {
@@ -75,10 +77,26 @@ a.no-underline {
 }
 
 .content{
-    background-image: url("bkgd.png");
-    background-size: 100vw;
+    background-image: url("bkgdl.png");
     position: absolute;
     left: 0;
     right: 0;
-    width: 100vw;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    height: 6116px;
+    background-repeat: no-repeat;
+}
+
+#culture-history{
+    position: absolute;
+    left: 80px;
+    top: 200px;
+}
+
+#culture-food{
+    position: absolute;
+    left: 50px;
+    top: 600px;
 }
