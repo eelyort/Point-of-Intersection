@@ -17,7 +17,7 @@ header {
     margin-top: -1.25em;
     color: white;
     text-transform: uppercase;
-    padding-top: 25px;
+    padding-top: 30px;
     /*position: absolute;*/
     /*left: 0;*/
     /*top: 0;*/
@@ -44,7 +44,8 @@ header h1 {
 
 .body-text {
     text-align: center;
-    font-size: 38px;
+    font-size: 34px;
+    font-weight: lighter;
     /*max-width: 60vw;*/
     padding-left: 10vw;
     padding-right: 10vw;
@@ -63,14 +64,14 @@ header h1 {
 }
 
 a {
-    color: blue; /*TODO*/
+    color: white;
     text-underline: none;
 }
 a:hover {
-    color: lightblue;
+    color: #fff1c0;
 }
 a:active {
-    color: darkblue;
+    color: #fff1c0;
 }
 a.no-underline {
     text-decoration: none;
@@ -92,13 +93,22 @@ a.no-underline {
 #culture-history{
     position: absolute;
     left: 80px;
-    top: 480px;
+    top: 440px;
 }
 
 #culture-food{
     position: absolute;
     right: 50px;
-    top: 1350px;
+    top: 1280px;
+}
+
+.footer{
+    position: absolute;
+    top: 4450px;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    padding-left: 120px;
 }
 
 
