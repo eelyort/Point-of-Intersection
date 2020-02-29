@@ -236,7 +236,9 @@ function drawGameOverScreen(){
 function drawLoadingMessage() {
 	ctx.font = "128px Arial";
 	ctx.fillStyle = "white";
+	ctx.strokeStyle = "black";
 	ctx.fillText("LOADING...", canvas.width/5, canvas.height/2);
+	ctx.strokeText("LOADING...", canvas.width/5, canvas.height/2);
 }
 
 function startAnimating(fps) {
