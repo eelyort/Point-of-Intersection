@@ -33,7 +33,7 @@ var gameOver = false;
 var startingPlay = false;
 var tapToPlayScreenUp = true;
 var score = 0;
-
+let scoreboard = document.getElementById("game1Score");
 
 
 
@@ -63,9 +63,11 @@ function draw() {
 	if(shuttleCockY+200 < groundY-50 && shuttleCockY+200 > groundY-250 && alreadyClicked && !alreadyHitBall){
 		shuttleCock_dY = Math.floor(Math.random() * -30) - 30;
 		score++;
+		scoreboard.innerHTML = "Score: " + score;
+		// alert("Score: " + score);
+		// alert("JEE");
 		alreadyHitBall = true;
 		console.log("score is " + score);
-		
 	}
 	shuttleCock_dY += 1;
 	
@@ -148,6 +150,7 @@ function clickDetected(){
 		gameOver = false;
 		//pressedPlay = false;
 		score = 0;
+		scoreboard.innerHTML = "Score: 0";
 		
 		tapToPlayScreenUp = true;
 		return;

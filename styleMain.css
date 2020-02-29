@@ -215,3 +215,10 @@ a.no-underline {
     font-weight: normal;
 }
 
+.scoreboard {
+    position: absolute;
+    left: 70vw;
+    top: 3vh;
+    font-size: 2vh;
+    color: #ff5400;
+}
