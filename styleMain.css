@@ -10,6 +10,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.disable-dbl-tap-zoom {
+    touch-action: manipulation;
+}
+
 header {
     background-color: #ff5400;
     margin-left: -0.5em;
@@ -36,7 +40,7 @@ header h1 {
     text-align: center;
     top: 16px;
     font-weight: lighter;
-    background: -webkit-linear-gradient(#ffffff,#fff1c0);
+    background: -webkit-linear-gradient(#ffffff, #fff1c0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 65px;
@@ -67,17 +71,20 @@ a {
     color: white;
     text-underline: none;
 }
+
 a:hover {
     color: #fff1c0;
 }
+
 a:active {
     color: #fff1c0;
 }
+
 a.no-underline {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
-.content{
+.content {
     background-image: url("bkgda.png");
     position: absolute;
     left: 0;
@@ -86,29 +93,39 @@ a.no-underline {
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
-    height: 6116px;
+    height: 4730px;
     background-repeat: no-repeat;
 }
 
-#culture-history{
+#culture-history {
     position: absolute;
     left: 80px;
     top: 440px;
 }
 
-#culture-food{
+#culture-food {
     position: absolute;
     right: 50px;
     top: 1280px;
 }
 
-.footer{
+#gameSection {
+    position: absolute;
+    top: 3600px;
+    right: 90px;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.footer {
     position: absolute;
     top: 4550px;
     text-align: center;
     font-size: 40px;
     text-transform: uppercase;
-    padding-left: 120px;
+    padding-left: 173px;
 }
 
 .myCard {
@@ -122,11 +139,13 @@ a.no-underline {
     /*padding: 8rem;*/
     box-shadow: 0 0 0.9em #000;
 }
+
 .myCard .cardContent {
     padding: 4rem;
     padding-top: 2rem;
     margin: 0;
 }
+
 .myCard .cardContent p {
     text-align: center;
     /*TODO*/
@@ -137,6 +156,7 @@ a.no-underline {
     margin: -0.1em;
     font-size: 5vh;
 }
+
 .myCard .cardContent .answerCard {
     position: absolute;
     height: 8vh;
@@ -145,6 +165,7 @@ a.no-underline {
     border-radius: 1rem;
     box-shadow: 0 0 0.4rem #000;
 }
+
 .myCard .cardContent .answerCard p {
     text-align: center;
     vertical-align: center;
@@ -154,9 +175,11 @@ a.no-underline {
     top: 0;
     margin-top: -0.25em;
 }
+
 .myCard .cardContent .answerCard:hover {
     /*TODO*/
 }
+
 .myCard .cardContent .answerCard:active {
     box-shadow: 0 0 0.1em #000;
     /*TODO*/
@@ -164,12 +187,38 @@ a.no-underline {
 
 .button-card {
     border-radius: 1rem;
-    box-shadow: 0 0 0.4rem #000;
+    box-shadow: 0 0 0.3rem #500000;
     border: 1px solid;
     position: absolute;
-    height: 8vh;
+    height: 60px;
     width: 20vw;
+    color: #ff5400;
+    background-color: #fff1c0;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    left: 185px;
+    margin-top: 4rem;
+    padding-top: 1rem;
+    margin-left: 10rem;
 }
+
 .button-card:active {
-    box-shadow: 0 0 0.1rem #000;
+    box-shadow: 0 0 0.6rem #500000;
+    color: #ff5400;
+    font-weight: normal;
+}
+
+.button-card:hover {
+    box-shadow: 0 0 0.6rem #500000;
+    color: #ff5400;
+    font-weight: normal;
+}
+
+.scoreboard {
+    position: absolute;
+    left: 70vw;
+    top: 3vh;
+    font-size: 2vh;
+    color: #ff5400;
 }
