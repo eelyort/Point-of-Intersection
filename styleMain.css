@@ -11,7 +11,7 @@ html {
 }
 
 header {
-    background-color: #de6f43;
+    background-color: #ff5400;
     margin-left: -0.5em;
     margin-right: -0.5em;
     margin-top: -1.25em;
@@ -78,7 +78,7 @@ a.no-underline {
 }
 
 .content{
-    background-image: url("bkgdg.png");
+    background-image: url("bkgda.png");
     position: absolute;
     left: 0;
     right: 0;
