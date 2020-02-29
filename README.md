@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+## Welcome to the Point of Intersection
 
-You can use the [editor on GitHub](https://github.com/eelyort/eelyort.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+A website developed to teach about cultures throughout the world to commuters waiting at the bus stop. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### The Problem and Solution
 
-### Markdown
+Texas A&M bus riders wait up to 15 minutes at the bus stop. 
+We decided to promote cultural awareness among students by displaying colorful posters depicting the culture of communities around the world and provide a QR code so visitors can learn more about the people in the region.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The QR leads users to a landing page introducing them to the region and country. Within are short snipets are details about the food, culture, events, history, or other tidbits of information.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/eelyort/eelyort.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Once the user learns of the culture, they are welcomed to play a game that immersifies the user in an activity that is specific to the region.
