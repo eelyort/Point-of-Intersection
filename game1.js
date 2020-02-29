@@ -193,20 +193,29 @@ function drawTapToStart(){
 
 function drawGameOverScreen(){
 	ctx.font = "128px avenir";
-	ctx.fillStyle = "black";
-	ctx.fillText("GAME OVER", canvas.width/5, canvas.height/4);
+	ctx.fillStyle = "white";
+	ctx.strokeStyle = 'black';
+	ctx.lineWidth = 2;
+	ctx.fillText("GAME OVER", canvas.width/15, canvas.height/4);
+	ctx.strokeText("GAME OVER", canvas.width/12, canvas.height/4);
+	
 	ctx.font = "128px avenir";
-	ctx.fillText("SCORE: " + score, canvas.width/4, canvas.height/3);
+	ctx.fillText("SCORE: " + score, canvas.width/8, canvas.height/3);
+	ctx.strokeText("SCORE: " + score, canvas.width/8, canvas.height/3);
+	
+	ctx.fillStyle = "black";
+	ctx.lineWidth = 1;
 	ctx.font = "64px avenir";
-	ctx.fillText("TAP ANYWHERE TO CONTINUE", canvas.width/8, canvas.height/2);
+	ctx.fillText("TAP ANYWHERE TO CONTINUE", canvas.width/50, canvas.height/2);
+	
 	ctx.font = "30px avenir";
-	ctx.fillText("Version 1.4", 50, 50);
+	ctx.fillText("Version 1.5", 50, 50);
 }
 
 function drawLoadingMessage() {
 	ctx.font = "32px Arial";
 	ctx.fillStyle = "black";
-	ctx.fillText("LOADING...", canvas.width/2, canvas.height/2);
+	ctx.fillText("LOADING...", canvas.width/8, canvas.height/2);
 }
 
 function startAnimating(fps) {
