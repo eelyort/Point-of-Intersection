@@ -67,7 +67,7 @@ function draw() {
 	shuttleCockY += shuttleCock_dY;
 	
 	//Handles shuttlecock bouncing
-	if(shuttleCockY+shuttleCockDiameter < groundY-50 && shuttleCockY+shuttleCockDiameter > groundY-250 && alreadyClicked && !alreadyHitBall){
+	if(shuttleCockY+shuttleCockDiameter < groundY-75 && shuttleCockY+shuttleCockDiameter > groundY-125 && alreadyClicked && !alreadyHitBall && leg_dY < 0){
 		shuttleCock_dY = Math.floor(Math.random() * -30) - 30;
 		score++;
 		scoreboard.innerHTML = "Score: " + score;
@@ -142,6 +142,7 @@ function clickDetected(typeEvent){
 			tappedToReplay = false;
 			if(typeEvent == "touch"){
 				afterTappedToReplay = true;
+				console.log("touchEvent detected");
 			}
 			return;
 		}
@@ -153,6 +154,7 @@ function clickDetected(typeEvent){
 	
 	if(afterTappedToReplay){
 		afterTappedToReplay = false;
+		console.log("touchEvent detected");
 		return;
 	}
 	
@@ -160,6 +162,7 @@ function clickDetected(typeEvent){
 		if(typeEvent == "touch"){
 			tappedToReplay = true;
 		}
+		
 		legY = groundY-legHeight;
 		leg_dY = 0;
 		shuttleCockY = 50;
@@ -175,20 +178,20 @@ function clickDetected(typeEvent){
 		
 		return;
 	}
-	/*if(startingPlay){
-		startingPlay = false;
-		return;
-	}*/
 	
 	
-	leg_dY -= 55;
+	leg_dY -= 45;
 	alreadyClicked = true;
 }
 
 function drawTapToStart(){
 	ctx.font = "64px avenir";
-	ctx.fillStyle = "black";
+	ctx.fillStyle = "white";
+	ctx.strokeStyle = "black"
+	ctx.lineWidth = 1;
+	
 	ctx.fillText("Tap anywhere to start!", canvas.width/8, canvas.height/2);
+	ctx.strokeText("Tap anywhere to start!", canvas.width/8, canvas.height/2);
 }
 
 function drawGameOverScreen(){
@@ -197,11 +200,11 @@ function drawGameOverScreen(){
 	ctx.strokeStyle = 'black';
 	ctx.lineWidth = 2;
 	ctx.fillText("GAME OVER", canvas.width/15, canvas.height/4);
-	ctx.strokeText("GAME OVER", canvas.width/15, canvas.height/4);
+	ctx.strokeText("GAME OVER", Math.floor(canvas.width/13.3), canvas.height/4);
 	
 	ctx.font = "128px avenir";
 	ctx.fillText("SCORE: " + score, canvas.width/8, canvas.height/3);
-	ctx.strokeText("SCORE: " + score, canvas.width/8, canvas.height/3);
+	ctx.strokeText("SCORE: " + score, Math.floor(canvas.width/7.5), canvas.height/3);
 	
 	ctx.lineWidth = 1;
 	ctx.font = "64px avenir";
@@ -209,7 +212,7 @@ function drawGameOverScreen(){
 	ctx.strokeText("TAP ANYWHERE TO CONTINUE", canvas.width/50, canvas.height/2);
 	
 	ctx.font = "30px avenir";
-	ctx.fillText("Version 1.6", 50, 50);
+	ctx.fillText("Version 1.7", 50, 50);
 }
 
 function drawLoadingMessage() {
