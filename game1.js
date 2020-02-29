@@ -144,15 +144,15 @@ function clickDetected(typeEvent){
 		return;
 	}
 	
-	if (typeEvent == "touch"){
-		isMobile = true;
-	}
-	
 	if(gameOver){
 		/*if(typeEvent == "touch"){
 			tappedToReplay = true;
 			
 		}*/
+		
+		if (typeEvent == "touch"){
+			isMobile = true;
+		}
 		
 		legY = groundY-legHeight;
 		leg_dY = 0;
