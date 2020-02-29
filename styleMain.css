@@ -14,17 +14,17 @@ header {
     background-color: #bc340a;
     margin-left: -0.5em;
     margin-right: -0.5em;
-
     margin-top: -1.25em;
     color: white;
     text-transform: uppercase;
-    padding-top: 6px;
+    padding-top: 30px;
     /*position: absolute;*/
     /*left: 0;*/
     /*top: 0;*/
     /*height: 6vh;*/
     height: 100px;
-    padding-bottom: 10px;
+    padding-bottom: 115px;
+
     /*
     border-bottom:1px solid #CCC;
     */
@@ -35,22 +35,23 @@ header h1 {
     position: relative;
     text-align: center;
     top: 16px;
-    font-size: 30px;
     font-weight: lighter;
     background: -webkit-linear-gradient(#ffffff,#fff1c0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 65px;
 }
 
 .body-text {
     text-align: center;
-    font-size: 16px;
+    font-size: 34px;
+    font-weight: lighter;
     /*max-width: 60vw;*/
     padding-left: 10vw;
     padding-right: 10vw;
-    line-height: 25px;
+    line-height: 40px;
     color: white;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .diamond-para-break {
@@ -63,14 +64,14 @@ header h1 {
 }
 
 a {
-    color: blue; /*TODO*/
+    color: white;
     text-underline: none;
 }
 a:hover {
-    color: lightblue;
+    color: #fff1c0;
 }
 a:active {
-    color: darkblue;
+    color: #fff1c0;
 }
 a.no-underline {
     text-decoration: none;
@@ -92,13 +93,22 @@ a.no-underline {
 #culture-history{
     position: absolute;
     left: 80px;
-    top: 200px;
+    top: 440px;
 }
 
 #culture-food{
     position: absolute;
-    left: 50px;
-    top: 600px;
+    right: 50px;
+    top: 1280px;
+}
+
+.footer{
+    position: absolute;
+    top: 4450px;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    padding-left: 120px;
 }
 
 .myCard {
