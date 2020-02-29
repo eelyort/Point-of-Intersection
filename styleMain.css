@@ -168,7 +168,7 @@ a.no-underline {
     /*color: aqua;*/
     padding: 0;
     margin: -0.1em;
-    font-size: 5vh;
+    font-size: 4vh;
 }
 
 .myCard .cardContent .answerCard {
@@ -183,7 +183,7 @@ a.no-underline {
 .myCard .cardContent .answerCard p {
     text-align: center;
     vertical-align: center;
-    font-size: 3vh;
+    font-size: 2vh;
     padding: 1em;
     position: relative;
     top: 0;
