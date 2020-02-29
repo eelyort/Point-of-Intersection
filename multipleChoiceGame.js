@@ -250,6 +250,7 @@ function startMultipleChoice(callback) {
             myQuestion.remove();
             myCardContent.remove();
             myPanel.remove();
+            callback(correct);
         }
         else{
             counter++;
