@@ -16,8 +16,8 @@ shuttleCock.src = "SunsetFromACliff.png";
 //Listeners
 leg.addEventListener('load', function() {legLoaded = true;}, false);
 shuttleCock.addEventListener('load', function() {shuttleCockLoaded = true;}, false);
-document.addEventListener("click", function(){clickDetected("click");});
-document.addEventListener('touchstart', function(e){clickDetected("touch");}, false)
+document.addEventListener("click", function(){clickDetected();});
+document.addEventListener('touchstart', function(e){clickDetected();}, false);
 
 var pressedPlay = false;
 
@@ -34,7 +34,7 @@ var tappedToReplay = false;
 var startingPlay = false;
 var tapToPlayScreenUp = true;
 var score = 0;
-
+let scoreboard = document.getElementById("game1Score");
 
 
 
@@ -64,6 +64,7 @@ function draw() {
 	if(shuttleCockY+200 < groundY-50 && shuttleCockY+200 > groundY-250 && alreadyClicked && !alreadyHitBall){
 		shuttleCock_dY = Math.floor(Math.random() * -30) - 30;
 		score++;
+		scoreboard.innerHTML = "Score: " + score;
 		alreadyHitBall = true;
 		console.log("score is " + score);
 		
@@ -158,7 +159,8 @@ function clickDetected(typeEvent){
 		gameOver = false;
 		//pressedPlay = false;
 		score = 0;
-		
+		scoreboard.innerHTML = "Score: 0";
+
 		tapToPlayScreenUp = true;
 		
 		return;

@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Point of Intersection</title>
-
+    <link rel="stylesheet" href="styleMain.css">
+    <meta name="viewport" content="user-scalable=no">
 </head>
-<body>
-    <canvas id="myCanvas" class="gameCanvas" width = "1440" height = "2900"> <!-- The Game is drawn in here--> </canvas>
+<body class="noscroll">
+    <div class="scoreboard">
+        <p id="game1Score">
+            Score: 0
+        </p>
+    </div>
+    <canvas id="myCanvas" class="gameCanvas" width = "1440" height = "2900" style="border: 2px solid"> <!-- The Game is drawn in here--> </canvas>
 <script src="game1.js"></script>
 </body>
 </html>
