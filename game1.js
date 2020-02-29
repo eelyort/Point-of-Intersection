@@ -2,7 +2,7 @@ var canvas = document.getElementById("myCanvas")
 var ctx = canvas.getContext("2d");
 
 let fps, fpsInterval, startTime, now, then, elapsed;
-fps = 60;
+fps = 30;
 fpsInterval = 1000 / fps;
 
 //Handles images
@@ -14,9 +14,14 @@ var background1 = new Image();
 var background1_loaded = false;
 var background2 = new Image();
 var background2_loaded = false;
+var shuttlecockImgSrcArray = ["shuttlecockflutter_0000_Group-3-copy-3.png", "shuttlecockflutter_0001_Group-3-copy-5.png", "shuttlecockflutter_0002_Group-3-copy-4.png", "shuttlecockflutter_0003_Group-3-copy-2.png", "shuttlecockflutter_0004_Group-3-copy.png", "shuttlecockflutter_0005_Group-3.png"];
+var shuttlecockImages = [new Image(), new Image(), new Image(), new Image(), new Image(), new Image()];
+var shuttlecockArrayIterator = 0;
+var framesPassed = 0;
+
 
 leg.src = "Spells.png";
-shuttleCock.src = "SunsetFromACliff.png";
+shuttleCock.src = "sc/shuttlecockflutter_0000_Group-3-copy-3.png";
 background1.src = "gamebkgd.png";
 background2.src = "gamebuilding.png";
 
@@ -37,7 +42,7 @@ var legWidth = 100;
 var legHeight = 600;
 var legY = groundY-legHeight;
 var leg_dY = 0;
-var shuttleCockDiameter = 100;
+var shuttleCockDiameter = 300;
 var shuttleCockY = 50;
 var shuttleCock_dY = 1;
 var alreadyClicked = false;
@@ -48,8 +53,8 @@ var afterTappedToReplay = false;
 var startingPlay = false;
 var tapToPlayScreenUp = true;
 var score = 0;
-var tT = 0;
 var isMobile = false;
+
 
 
 let scoreboard = document.getElementById("game1Score");
@@ -57,6 +62,10 @@ let questionUp = false;
 let resetScore = true;
 let resetUsed = false;
 let waitingOnReset = false;
+
+for(var i = 0; i < shuttlecockImgSrcArray.length; i++){
+	shuttlecockImages[i].src = shuttlecockImgSrcArray[i];
+}
 
 
 function drawTimesTouched(){
@@ -75,6 +84,19 @@ function draw() {
 		drawLoadingMessage();
 		return;
 	}
+	
+	framesPassed++;
+	if(framesPassed == 2){
+		if(shuttlecockArrayIterator < 5){
+			shuttlecockArrayIterator++;
+		}
+		else{
+			shuttlecockArrayIterator = 0;
+		}
+		framesPassed = 0;
+	}
+	
+
 	
 	//Draws leg, ball, and background
 	ctx.drawImage(background1, 0, 0,965,1680);
@@ -155,11 +177,7 @@ function draw() {
 }
 
 function drawBall(){
-	ctx.beginPath();
-	ctx.rect(legX,shuttleCockY,shuttleCockDiameter,shuttleCockDiameter);
-	ctx.fillStyle = "red";
-	ctx.fill();
-	ctx.closePath();
+	ctx.drawImage(shuttlecockImages[shuttlecockArrayIterator],legX-65,shuttleCockY);
 }
 
 function drawLeg(){
@@ -276,7 +294,7 @@ function drawGameOverScreen(){
 	
 	ctx.font = "30px avenir";
 	ctx.fillStyle = "black";
-	ctx.fillText("Version 1.77", 50, 50);
+	ctx.fillText("Version 1.8", 50, 50);
 }
 
 function drawLoadingMessage() {
@@ -305,7 +323,6 @@ function animate() {
 		// Get ready for next frame by setting then=now, but also adjust for your
 		// specified fpsInterval not being a multiple of RAF's interval (16.7ms)
 		then = now - (elapsed % fpsInterval);
-
 
 		draw();
 	}
