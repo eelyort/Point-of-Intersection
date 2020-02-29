@@ -64,7 +64,7 @@ function draw() {
 	//Draws leg and ball
 	drawLeg();
 	drawBall();
-	drawTimesTouched();
+	//drawTimesTouched();
 	
 	if(tapToPlayScreenUp && !isMobile){
 		drawTapToStart();
@@ -229,6 +229,7 @@ function drawGameOverScreen(){
 	ctx.strokeText("TAP ANYWHERE TO CONTINUE", canvas.width/30, canvas.height/2);
 	
 	ctx.font = "30px avenir";
+	ctx.fillStyle = "black";
 	ctx.fillText("Version 1.75", 50, 50);
 }
 
