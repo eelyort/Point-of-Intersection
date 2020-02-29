@@ -1,9 +1,8 @@
+
+
 body {
     background-color: #ffffff;
-    /*padding-top: 0px;*/
-    /*margin-top: 0px;*/
-    /*width: 1rem;*/
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: "Roboto Light", Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -39,7 +38,7 @@ header h1 {
     position: relative;
     text-align: center;
     top: 16px;
-    font-weight: lighter;
+    font-weight: 400;
     background: -webkit-linear-gradient(#ffffff, #fff1c0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -49,7 +48,7 @@ header h1 {
 .body-text {
     text-align: center;
     font-size: 34px;
-    font-weight: lighter;
+    font-weight: 400;
     /*max-width: 60vw;*/
     padding-left: 10vw;
     padding-right: 10vw;
@@ -115,17 +114,16 @@ a.no-underline {
     right: 90px;
 }
 
-.noscroll {
-    overflow: hidden;
-}
-
 .footer {
     position: absolute;
     top: 4550px;
     text-align: center;
     font-size: 40px;
     text-transform: uppercase;
-    padding-left: 173px;
+    padding-left: 180px;
+    background: -webkit-linear-gradient(#ffffff, #fff1c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .myCard {
@@ -193,7 +191,7 @@ a.no-underline {
     height: 60px;
     width: 20vw;
     color: #ff5400;
-    background-color: #fff1c0;
+    background-image: linear-gradient(to bottom,white,#fff1c0);
     text-decoration: none;
     text-align: center;
     font-size: 30px;
