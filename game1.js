@@ -16,8 +16,8 @@ shuttleCock.src = "SunsetFromACliff.png";
 //Listeners
 leg.addEventListener('load', function() {legLoaded = true;}, false);
 shuttleCock.addEventListener('load', function() {shuttleCockLoaded = true;}, false);
-document.addEventListener("click", function(){clickDetected();});
-document.addEventListener('touchstart', function(e){clickDetected();}, false)
+document.addEventListener("click", function(){clickDetected("click");});
+document.addEventListener('touchstart', function(e){clickDetected("touch");}, false)
 
 var pressedPlay = false;
 
@@ -30,6 +30,7 @@ var shuttleCock_dY = 1;
 var alreadyClicked = false;
 var alreadyHitBall = false;
 var gameOver = false;
+var tappedToReplay = false;
 var startingPlay = false;
 var tapToPlayScreenUp = true;
 var score = 0;
@@ -73,7 +74,6 @@ function draw() {
 	if(shuttleCockY + 200 + shuttleCock_dY >= groundY){
 		shuttleCockY = groundY-200;
 		shuttleCock_dY = 0;
-		
 		gameOver = true;
 		
 		//Handles restarting the game
@@ -127,18 +127,28 @@ function drawLeg(){
 	ctx.closePath();
 }
 
-function clickDetected(){
+function clickDetected(typeEvent){
 	//If the leg is already up in the air, then don't do anything when the user clicks
 	if(alreadyClicked){
 		return;
 	}
 	
 	if(tapToPlayScreenUp){
+		
+		if(tappedToReplay){
+			tappedToReplay = false;
+			return;
+		}
+			
 		tapToPlayScreenUp = false;
+		
 		return;
 	}
 	
 	if(gameOver){
+		if(typeEvent == "touch"){
+			tappedToReplay = true;
+		}
 		legY = 1500;
 		leg_dY = 0;
 		shuttleCockY = 50;
@@ -150,6 +160,7 @@ function clickDetected(){
 		score = 0;
 		
 		tapToPlayScreenUp = true;
+		
 		return;
 	}
 	/*if(startingPlay){
@@ -176,6 +187,8 @@ function drawGameOverScreen(){
 	ctx.fillText("SCORE: " + score, canvas.width/4, canvas.height/3);
 	ctx.font = "64px avenir";
 	ctx.fillText("TAP ANYWHERE TO CONTINUE", canvas.width/8, canvas.height/2);
+	ctx.font = "30px avenir";
+	ctx.fillText("Version 1.2", 50, 50);
 }
 
 function drawLoadingMessage() {
