@@ -197,7 +197,7 @@ function drawGameOverScreen(){
 	ctx.strokeStyle = 'black';
 	ctx.lineWidth = 2;
 	ctx.fillText("GAME OVER", canvas.width/15, canvas.height/4);
-	ctx.strokeText("GAME OVER", canvas.width/12, canvas.height/4);
+	ctx.strokeText("GAME OVER", canvas.width/15, canvas.height/4);
 	
 	ctx.font = "128px avenir";
 	ctx.fillText("SCORE: " + score, canvas.width/8, canvas.height/3);
