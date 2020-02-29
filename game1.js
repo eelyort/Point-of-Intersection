@@ -31,9 +31,11 @@ var alreadyClicked = false;
 var alreadyHitBall = false;
 var gameOver = false;
 var tappedToReplay = false;
+var afterTappedToReplay = false;
 var startingPlay = false;
 var tapToPlayScreenUp = true;
 var score = 0;
+
 
 
 
@@ -137,11 +139,17 @@ function clickDetected(typeEvent){
 		
 		if(tappedToReplay){
 			tappedToReplay = false;
+			afterTappedToReplay = true;
 			return;
 		}
 			
 		tapToPlayScreenUp = false;
 		
+		return;
+	}
+	
+	if(afterTappedToReplay){
+		afterTappedToReplay = false;
 		return;
 	}
 	
@@ -188,7 +196,7 @@ function drawGameOverScreen(){
 	ctx.font = "64px avenir";
 	ctx.fillText("TAP ANYWHERE TO CONTINUE", canvas.width/8, canvas.height/2);
 	ctx.font = "30px avenir";
-	ctx.fillText("Version 1.2", 50, 50);
+	ctx.fillText("Version 1.3", 50, 50);
 }
 
 function drawLoadingMessage() {
