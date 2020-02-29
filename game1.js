@@ -139,7 +139,9 @@ function clickDetected(typeEvent){
 		
 		if(tappedToReplay){
 			tappedToReplay = false;
-			afterTappedToReplay = true;
+			if(typeEvent == "touch"){
+				afterTappedToReplay = true;
+			}
 			return;
 		}
 			
