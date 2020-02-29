@@ -50,7 +50,13 @@ var tapToPlayScreenUp = true;
 var score = 0;
 var tT = 0;
 var isMobile = false;
+
+
 let scoreboard = document.getElementById("game1Score");
+let questionUp = false;
+let resetScore = true;
+let resetUsed = false;
+let waitingOnReset = false;
 
 
 function drawTimesTouched(){
@@ -75,8 +81,6 @@ function draw() {
 	ctx.drawImage(background2, 0, 0,965,1680);
 	drawLeg();
 	drawBall();
-
-	
 	//drawTimesTouched();
 	
 	if(tapToPlayScreenUp && !isMobile){
@@ -102,6 +106,7 @@ function draw() {
 	if(shuttleCockY + shuttleCockDiameter + shuttleCock_dY >= groundY){
 		shuttleCockY = groundY-shuttleCockDiameter;
 		shuttleCock_dY = 0;
+
 		gameOver = true;
 		
 		//Handles restarting the game
@@ -110,6 +115,26 @@ function draw() {
 	//Handles the game over screen
 	if(gameOver){
 		drawGameOverScreen()
+		// -----------------------------------------Multiple choice code here - Troy
+		if(!questionUp && !resetUsed && !waitingOnReset) {
+			// alert("reseting");
+
+			function callback(correct) {
+				waitingOnReset = true;
+				if (correct) {
+					// reset variables except for score
+					resetScore = false;
+					questionUp = false;
+				}
+				else{
+					resetScore = true;
+					questionUp = false;
+				}
+			}
+
+			questionUp = true;
+			startMultipleChoice(callback);
+		}
 	}
 	
 
@@ -152,6 +177,9 @@ function drawLeg(){
 }
 
 function clickDetected(typeEvent){
+	if(questionUp){
+		return;
+	}
 	//If the leg is already up in the air, then don't do anything when the user clicks
 	if(alreadyClicked){
 		return;
@@ -175,8 +203,19 @@ function clickDetected(typeEvent){
 		alreadyHitBall = false;
 		gameOver = false;
 		//pressedPlay = false;
-		score = 0;
-		scoreboard.innerHTML = "Score: 0";
+
+		waitingOnReset = false;
+		// alert(resetScore);
+		if(resetScore) {
+			score = 0;
+			scoreboard.innerHTML = "Score: 0";
+			resetUsed = false;
+			// resetScore = false;
+		}
+		else{
+			resetScore = true;
+			resetUsed = true;
+		}
 
 		tapToPlayScreenUp = true;
 		

@@ -197,7 +197,7 @@ function startMultipleChoice(callback) {
 
     // question
     let myQuestion = myDocument.createElement("p");
-    myQuestion.innerHTML = thisQuestion.question;
+    myQuestion.innerHTML = "Answer to get a second chance: " + thisQuestion.question;
     myCardContent.appendChild(myQuestion);
 
     // answers

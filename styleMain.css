@@ -147,13 +147,16 @@ a.no-underline {
     top: 20vh;
     border: 2px solid;
     border-radius: 4rem;
+    background-color: #ffffff;
     /*padding: 8rem;*/
+    z-index: 2;
     box-shadow: 0 0 0.9em #000;
 }
 
 .myCard .cardContent {
     padding: 4rem;
     padding-top: 2rem;
+    z-index: 3;
     margin: 0;
 }
 
