@@ -37,5 +37,24 @@ header h1 {
     /*max-width: 60vw;*/
     padding-left: 10vw;
     padding-right: 10vw;
-    line-height: 22px;
+    line-height: 28px;
+}
+
+.diamond-para-break {
+    position: relative;
+    left: -3px;
+    width: 11px;
+    height: auto;
+    margin-top: 17px;
+    margin-bottom: 17px;
+}
+
+a {
+    color: blue; /*TODO*/
+}
+a:hover {
+    color: lightblue;
+}
+a:active {
+    color: darkblue;
 }
