@@ -71,12 +71,15 @@ a {
     color: white;
     text-underline: none;
 }
+
 a:hover {
     color: #fff1c0;
 }
+
 a:active {
     color: #fff1c0;
 }
+
 a.no-underline {
     text-decoration: none;
 }
@@ -136,11 +139,13 @@ a.no-underline {
     /*padding: 8rem;*/
     box-shadow: 0 0 0.9em #000;
 }
+
 .myCard .cardContent {
     padding: 4rem;
     padding-top: 2rem;
     margin: 0;
 }
+
 .myCard .cardContent p {
     text-align: center;
     /*TODO*/
@@ -151,6 +156,7 @@ a.no-underline {
     margin: -0.1em;
     font-size: 5vh;
 }
+
 .myCard .cardContent .answerCard {
     position: absolute;
     height: 8vh;
@@ -159,6 +165,7 @@ a.no-underline {
     border-radius: 1rem;
     box-shadow: 0 0 0.4rem #000;
 }
+
 .myCard .cardContent .answerCard p {
     text-align: center;
     vertical-align: center;
@@ -168,9 +175,11 @@ a.no-underline {
     top: 0;
     margin-top: -0.25em;
 }
+
 .myCard .cardContent .answerCard:hover {
     /*TODO*/
 }
+
 .myCard .cardContent .answerCard:active {
     box-shadow: 0 0 0.1em #000;
     /*TODO*/
@@ -193,6 +202,7 @@ a.no-underline {
     padding-top: 1rem;
     margin-left: 10rem;
 }
+
 .button-card:active {
     box-shadow: 0 0 0.6rem #500000;
     color: #ff5400;
