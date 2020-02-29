@@ -174,7 +174,8 @@ const problems = [
     new questionAns("What Chinese dish is famous for being super spicy?", "Mapo Tofu", "Sichuan", "Buffalo Wild Wings", "Firecrackers", [0, 1], "Sichuan province, where Mapo Tofu is made, has a reputation for eating and creating very spicy food!"),
     new questionAns("Which Chinese Zodiac animal won the race and is the first in a rotation?", "Rat", "Ox", "Dragon", "tiger", [0], "The winner was the rat, who hid on the ox's head and jumped across first."),
     new questionAns("What does the lion dance signify?", "Prosperity", "Good Luck", "Wisdom", "Longevity", [0, 1, 2, 3], "The lion dance signifies all of these things!"),
-    new questionAns("When did the Qing Dynasty fall?", "1911", "1913", "1914", "1902", [0], "The last Chinese Dynasty, the Qing Dynasty, fell in 1911.")
+    new questionAns("When did the Qing Dynasty fall?", "1911", "1913", "1914", "1902", [0], "The last Chinese Dynasty, the Qing Dynasty, fell in 1911."),
+    new questionAns("Which of these Chinese shuttlecock records are real?", "All", "97 kicks while jump-roping in one minute", "98 passes in one minute", "27-kick long volley in a duel(like badminton)", [0], "These are all real records!")
 ];
 
 function startMultipleChoice(callback) {
