@@ -1,3 +1,21 @@
 body {
- background-color: #FFA23F;
+    background-color: #FFA23F;
+    /*padding-top: 0px;*/
+    /*margin-top: 0px;*/
+}
+
+header {
+    position: relative;
+    /*display: block;*/
+    color: white;
+    margin-left: 0;
+    /*margin: 0 auto;*/
+    /*padding: 0;*/
+    width: 100%;
+    height: 60px;
+    /*margin-bottom: 60px;*/
+    background-color: #FF8300;
+    top: 0;
+    background-position: left;
+    left: 0px;
 }
