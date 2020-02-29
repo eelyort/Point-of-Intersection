@@ -39,10 +39,16 @@ var afterTappedToReplay = false;
 var startingPlay = false;
 var tapToPlayScreenUp = true;
 var score = 0;
+var tT = 0;
 let scoreboard = document.getElementById("game1Score");
 
 
-
+function drawTimesTouched(){
+	ctx.font = "64px avenir";
+	ctx.fillStyle = "white";
+	
+	ctx.fillText("Times touched: " + tT, canvas.width/8, canvas.height/2);
+}
 
 
 function draw() {
@@ -142,12 +148,15 @@ function clickDetected(typeEvent){
 			tappedToReplay = false;
 			if(typeEvent == "touch"){
 				afterTappedToReplay = true;
-				console.log("touchEvent detected");
+				tT++;
+				drawTimesTouched();
 			}
 			return;
 		}
 			
 		tapToPlayScreenUp = false;
+		tT++;
+		drawTimesTouched();
 		
 		return;
 	}
