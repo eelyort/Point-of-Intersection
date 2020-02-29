@@ -230,7 +230,7 @@ function drawGameOverScreen(){
 	
 	ctx.font = "30px avenir";
 	ctx.fillStyle = "black";
-	ctx.fillText("Version 1.75", 50, 50);
+	ctx.fillText("Version 1.76", 50, 50);
 }
 
 function drawLoadingMessage() {
