@@ -13,11 +13,13 @@ header {
     /*position: absolute;*/
     /*left: 0;*/
     /*top: 0;*/
-    height: 6vh;
+    /*height: 6vh;*/
+    height: 60px;
 }
 header h1 {
     /*vertical-align: ;*/
     position: relative;
     text-align: center;
-    top: 1vh;
+    top: 16px;
+    font-size: 30px;
 }
