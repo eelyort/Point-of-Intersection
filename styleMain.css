@@ -23,3 +23,21 @@ header h1 {
     top: 16px;
     font-size: 30px;
 }
+
+.body-text {
+    text-align: center;
+    font-size: 16px;
+    /*max-width: 60vw;*/
+    padding-left: 10vw;
+    padding-right: 10vw;
+    line-height: 22px;
+}
+
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #555;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+}
