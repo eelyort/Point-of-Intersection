@@ -17,7 +17,7 @@ shuttleCock.src = "SunsetFromACliff.png";
 leg.addEventListener('load', function() {legLoaded = true;}, false);
 shuttleCock.addEventListener('load', function() {shuttleCockLoaded = true;}, false);
 document.addEventListener("click", function(){clickDetected();});
-document.addEventListener('touchstart', function(e){clickDetected();}, false)
+document.addEventListener('touchstart', function(e){clickDetected();}, false);
 
 var pressedPlay = false;
 
