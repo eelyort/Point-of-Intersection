@@ -1,3 +1,84 @@
 body {
- background-color: #FFA23F;
+    background-color: #ffffff;
+    /*padding-top: 0px;*/
+    /*margin-top: 0px;*/
+    /*width: 1rem;*/
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #bc340a;
+    width: 100vw;
+    margin-left: -0.5em;
+    margin-top: -1.25em;
+    color: white;
+    text-transform: uppercase;
+    padding-top: 10px;
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    /*height: 6vh;*/
+    height: 100px;
+    padding-bottom: 15px;
+    /*
+    border-bottom:1px solid #CCC;
+    */
+}
+
+header h1 {
+    /*vertical-align: ;*/
+    position: relative;
+    text-align: center;
+    top: 16px;
+    font-size: 30px;
+    font-weight: lighter;
+    background: -webkit-linear-gradient(#ffffff,#fff1c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.body-text {
+    text-align: center;
+    font-size: 16px;
+    /*max-width: 60vw;*/
+    padding-left: 10vw;
+    padding-right: 10vw;
+    line-height: 28px;
+    color: white;
+}
+
+.diamond-para-break {
+    position: relative;
+    left: -3px;
+    width: 11px;
+    height: auto;
+    margin-top: 17px;
+    margin-bottom: 7px;
+}
+
+a {
+    color: blue; /*TODO*/
+    text-underline: none;
+}
+a:hover {
+    color: lightblue;
+}
+a:active {
+    color: darkblue;
+}
+a.no-underline {
+    text-decoration: none;
+}
+
+.content{
+    background-image: url("bkgd.png");
+    background-size: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100vw;
 }
