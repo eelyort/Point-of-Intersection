@@ -10,12 +10,21 @@ var leg = new Image();
 var shuttleCock = new Image();
 var legLoaded = false;
 var shuttleCockLoaded = false;
+var background1 = new Image();
+var background1_loaded = false;
+var background2 = new Image();
+var background2_loaded = false;
+
 leg.src = "Spells.png";
 shuttleCock.src = "SunsetFromACliff.png";
+background1.src = "gamebkgd.png";
+background2.src = "gamebuilding.png";
 
 //Listeners
 leg.addEventListener('load', function() {legLoaded = true;}, false);
 shuttleCock.addEventListener('load', function() {shuttleCockLoaded = true;}, false);
+background1.addEventListener('load', function() {background1_loaded = true;}, false);
+background2.addEventListener('load', function() {background2_loaded = true;}, false);
 document.addEventListener("click", function(){clickDetected("click");});
 document.addEventListener('touchstart', function(e){clickDetected("touch");}, false);
 
@@ -56,14 +65,18 @@ function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	
 	//Creates loading message when images aren't loaded yet
-	if (!legLoaded || !shuttleCockLoaded){
+	if (!legLoaded || !shuttleCockLoaded || !background1_loaded || !background2_loaded){
 		drawLoadingMessage();
 		return;
 	}
 	
-	//Draws leg and ball
+	//Draws leg, ball, and background
+	ctx.drawImage(background1, 0, 0,965,1680);
+	ctx.drawImage(background2, 0, 0,965,1680);
 	drawLeg();
 	drawBall();
+
+	
 	//drawTimesTouched();
 	
 	if(tapToPlayScreenUp && !isMobile){
