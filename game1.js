@@ -225,7 +225,7 @@ function drawGameOverScreen(){
 	ctx.strokeText("TAP ANYWHERE TO CONTINUE", canvas.width/50, canvas.height/2);
 	
 	ctx.font = "30px avenir";
-	ctx.fillText("Version 1.71", 50, 50);
+	ctx.fillText("Version 1.72", 50, 50);
 }
 
 function drawLoadingMessage() {
