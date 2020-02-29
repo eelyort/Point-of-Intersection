@@ -23,8 +23,12 @@ var pressedPlay = false;
 
 //Gameplay variables
 var groundY = 2300;
+var legX = 700;
+var legWidth = 200;
+var legHeight
 var legY = 1500;
 var leg_dY = 0;
+var shuttleCockDiameter = 200;
 var shuttleCockY = 50;
 var shuttleCock_dY = 1;
 var alreadyClicked = false;
@@ -63,7 +67,7 @@ function draw() {
 	shuttleCockY += shuttleCock_dY;
 	
 	//Handles shuttlecock bouncing
-	if(shuttleCockY+200 < groundY-50 && shuttleCockY+200 > groundY-250 && alreadyClicked && !alreadyHitBall){
+	if(shuttleCockY+shuttleCockDiameter < groundY-50 && shuttleCockY+shuttleCockDiameter > groundY-250 && alreadyClicked && !alreadyHitBall){
 		shuttleCock_dY = Math.floor(Math.random() * -30) - 30;
 		score++;
 		alreadyHitBall = true;
@@ -73,8 +77,8 @@ function draw() {
 	shuttleCock_dY += 1;
 	
 	//Handles what happens when the shuttlecock falls to the floor and restarting the game
-	if(shuttleCockY + 200 + shuttleCock_dY >= groundY){
-		shuttleCockY = groundY-200;
+	if(shuttleCockY + shuttleCockDiameter + shuttleCock_dY >= groundY){
+		shuttleCockY = groundY-shuttleCockDiameter;
 		shuttleCock_dY = 0;
 		gameOver = true;
 		
@@ -109,7 +113,7 @@ function draw() {
 
 function drawBall(){
 	ctx.beginPath();
-	ctx.rect(700,shuttleCockY,200,200);
+	ctx.rect(legX,shuttleCockY,shuttleCockDiameter,shuttleCockDiameter);
 	ctx.fillStyle = "red";
 	ctx.fill();
 	ctx.closePath();
@@ -117,13 +121,13 @@ function drawBall(){
 
 function drawLeg(){
 	ctx.beginPath();
-	ctx.rect(700,legY,200,800);
+	ctx.rect(legX,legY,legWidth,800);
 	ctx.fillStyle = "black";
 	ctx.fill();
 	ctx.closePath();
 	
 	ctx.beginPath();
-	ctx.rect(700,legY+600,200,200);
+	ctx.rect(legX,legY+600,legWidth,legWidth);
 	ctx.fillStyle = "blue";
 	ctx.fill();	
 	ctx.closePath();
