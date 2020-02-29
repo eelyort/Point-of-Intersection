@@ -40,14 +40,15 @@ var startingPlay = false;
 var tapToPlayScreenUp = true;
 var score = 0;
 var tT = 0;
+var isMobile = false;
 let scoreboard = document.getElementById("game1Score");
 
 
 function drawTimesTouched(){
 	ctx.font = "64px avenir";
 	ctx.fillStyle = "white";
-	
-	ctx.fillText("Times touched: " + tT, canvas.width/8, canvas.height/3);
+	ctx.strokeStyle = "black";
+	ctx.strokeText("Times touched: " + tT, canvas.width/8, canvas.height/3);
 }
 
 
@@ -65,7 +66,7 @@ function draw() {
 	drawBall();
 	drawTimesTouched();
 	
-	if(tapToPlayScreenUp){
+	if(tapToPlayScreenUp && !isMobile){
 		drawTapToStart();
 		return;
 	}
@@ -143,10 +144,15 @@ function clickDetected(typeEvent){
 		return;
 	}
 	
+	if (typeEvent == "touch"){
+		isMobile = true;
+	}
+	
 	if(gameOver){
-		if(typeEvent == "touch"){
+		/*if(typeEvent == "touch"){
 			tappedToReplay = true;
-		}
+			
+		}*/
 		
 		legY = groundY-legHeight;
 		leg_dY = 0;
@@ -164,33 +170,31 @@ function clickDetected(typeEvent){
 		return;
 	}
 	
+	/*if(afterTappedToReplay){
+		afterTappedToReplay = false;
+		console.log("touchEvent detected");
+		return;
+	}*/
+	
 	if(tapToPlayScreenUp){
 		
 		if(tappedToReplay){
 			tappedToReplay = false;
-			if(typeEvent == "touch"){
+			/*if(typeEvent == "touch"){
 				afterTappedToReplay = true;
 				tT++;
-			}
+			}*/
 			return;
 		}
 			
 		tapToPlayScreenUp = false;
-		if(typeEvent == "touch"){
+		/*if(typeEvent == "touch"){
 			tT++;
-		}
+		}*/
 	
 		
 		return;
 	}
-	
-	if(afterTappedToReplay){
-		afterTappedToReplay = false;
-		console.log("touchEvent detected");
-		return;
-	}
-	
-
 	
 	
 	leg_dY -= 45;
@@ -203,8 +207,8 @@ function drawTapToStart(){
 	ctx.strokeStyle = "black"
 	ctx.lineWidth = 1;
 	
-	ctx.fillText("Tap anywhere to start!", canvas.width/8, canvas.height/2);
-	ctx.strokeText("Tap anywhere to start!", canvas.width/8, canvas.height/2);
+	ctx.fillText("Tap anywhere to start!", canvas.width/6, canvas.height/2);
+	ctx.strokeText("Tap anywhere to start!", canvas.width/6, canvas.height/2);
 }
 
 function drawGameOverScreen(){
@@ -212,26 +216,26 @@ function drawGameOverScreen(){
 	ctx.fillStyle = "white";
 	ctx.strokeStyle = 'black';
 	ctx.lineWidth = 2;
-	ctx.fillText("GAME OVER", canvas.width/15, canvas.height/4);
-	ctx.strokeText("GAME OVER", Math.floor(canvas.width/13.3), canvas.height/4);
+	ctx.fillText("GAME OVER", canvas.width/12, canvas.height/4);
+	ctx.strokeText("GAME OVER", Math.floor(canvas.width/12), canvas.height/4);
 	
 	ctx.font = "128px avenir";
-	ctx.fillText("SCORE: " + score, canvas.width/6, canvas.height/3);
-	ctx.strokeText("SCORE: " + score, Math.floor(canvas.width/5.7), canvas.height/3);
+	ctx.fillText("SCORE: " + score, canvas.width/5, canvas.height/3);
+	ctx.strokeText("SCORE: " + score, Math.floor(canvas.width/5), canvas.height/3);
 	
 	ctx.lineWidth = 1;
 	ctx.font = "60px avenir";
-	ctx.fillText("TAP ANYWHERE TO CONTINUE", canvas.width/50, canvas.height/2);
-	ctx.strokeText("TAP ANYWHERE TO CONTINUE", canvas.width/50, canvas.height/2);
+	ctx.fillText("TAP ANYWHERE TO CONTINUE", canvas.width/30, canvas.height/2);
+	ctx.strokeText("TAP ANYWHERE TO CONTINUE", canvas.width/30, canvas.height/2);
 	
 	ctx.font = "30px avenir";
-	ctx.fillText("Version 1.74", 50, 50);
+	ctx.fillText("Version 1.75", 50, 50);
 }
 
 function drawLoadingMessage() {
 	ctx.font = "128px Arial";
 	ctx.fillStyle = "white";
-	ctx.fillText("LOADING...", canvas.width/11, canvas.height/2);
+	ctx.fillText("LOADING...", canvas.width/5, canvas.height/2);
 }
 
 function startAnimating(fps) {
