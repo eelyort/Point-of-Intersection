@@ -11,7 +11,7 @@ html {
 }
 
 header {
-    background-color: #bc340a;
+    background-color: #ff5400;
     margin-left: -0.5em;
     margin-right: -0.5em;
     margin-top: -1.25em;
@@ -74,11 +74,11 @@ a:active {
     color: #fff1c0;
 }
 a.no-underline {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .content{
-    background-image: url("bkgdl.png");
+    background-image: url("bkgda.png");
     position: absolute;
     left: 0;
     right: 0;
@@ -104,12 +104,72 @@ a.no-underline {
 
 .footer{
     position: absolute;
-    top: 4450px;
+    top: 4550px;
     text-align: center;
     font-size: 40px;
     text-transform: uppercase;
     padding-left: 120px;
 }
 
+.myCard {
+    height: 70vh;
+    width: 80vw;
+    position: absolute;
+    left: 9.5vw;
+    top: 20vh;
+    border: 2px solid;
+    border-radius: 4rem;
+    /*padding: 8rem;*/
+    box-shadow: 0 0 0.9em #000;
+}
+.myCard .cardContent {
+    padding: 4rem;
+    padding-top: 2rem;
+    margin: 0;
+}
+.myCard .cardContent p {
+    text-align: center;
+    /*TODO*/
+    /*font: ;*/
+    /*color: ;*/
+    /*color: aqua;*/
+    padding: 0;
+    margin: -0.1em;
+    font-size: 5vh;
+}
+.myCard .cardContent .answerCard {
+    position: absolute;
+    height: 8vh;
+    width: 70vw;
+    border: 1px solid;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.4rem #000;
+}
+.myCard .cardContent .answerCard p {
+    text-align: center;
+    vertical-align: center;
+    font-size: 3vh;
+    padding: 1em;
+    position: relative;
+    top: 0;
+    margin-top: -0.25em;
+}
+.myCard .cardContent .answerCard:hover {
+    /*TODO*/
+}
+.myCard .cardContent .answerCard:active {
+    box-shadow: 0 0 0.1em #000;
+    /*TODO*/
+}
 
-
+.button-card {
+    border-radius: 1rem;
+    box-shadow: 0 0 0.4rem #000;
+    border: 1px solid;
+    position: absolute;
+    height: 8vh;
+    width: 20vw;
+}
+.button-card:active {
+    box-shadow: 0 0 0.1rem #000;
+}
