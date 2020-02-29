@@ -74,7 +74,7 @@ a:active {
     color: #fff1c0;
 }
 a.no-underline {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .content{
@@ -143,7 +143,7 @@ a.no-underline {
     width: 70vw;
     border: 1px solid;
     border-radius: 1rem;
-    box-shadow: 0 0 0.4em #000;
+    box-shadow: 0 0 0.4rem #000;
 }
 .myCard .cardContent .answerCard p {
     text-align: center;
@@ -160,4 +160,16 @@ a.no-underline {
 .myCard .cardContent .answerCard:active {
     box-shadow: 0 0 0.1em #000;
     /*TODO*/
+}
+
+.button-card {
+    border-radius: 1rem;
+    box-shadow: 0 0 0.4rem #000;
+    border: 1px solid;
+    position: absolute;
+    height: 8vh;
+    width: 20vw;
+}
+.button-card:active {
+    box-shadow: 0 0 0.1rem #000;
 }
