@@ -6,6 +6,10 @@ body {
     font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     background-image: linear-gradient(to bottom, #ffffff, #ffffff, #ededed);
     width: 100vw;
@@ -46,15 +50,19 @@ header h1 {
     width: 11px;
     height: auto;
     margin-top: 17px;
-    margin-bottom: 17px;
+    margin-bottom: 7px;
 }
 
 a {
     color: blue; /*TODO*/
+    text-underline: none;
 }
 a:hover {
     color: lightblue;
 }
 a:active {
     color: darkblue;
+}
+a.no-underline {
+    text-decoration: none;
 }
