@@ -11,15 +11,18 @@ html {
 }
 
 header {
-    background-image: linear-gradient(to bottom, #ffffff, #ffffff, #ededed);
+    background-color: #bc340a;
     width: 100vw;
     margin-left: -0.5em;
     margin-top: -1.25em;
+    color: white;
+    text-transform: uppercase;
+    padding-top: 10px;
     /*position: absolute;*/
     /*left: 0;*/
     /*top: 0;*/
     /*height: 6vh;*/
-    height: 60px;
+    height: 100px;
     padding-bottom: 15px;
     /*
     border-bottom:1px solid #CCC;
@@ -33,6 +36,9 @@ header h1 {
     top: 16px;
     font-size: 30px;
     font-weight: lighter;
+    background: -webkit-linear-gradient(#ffffff,#fff1c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .body-text {
@@ -42,6 +48,7 @@ header h1 {
     padding-left: 10vw;
     padding-right: 10vw;
     line-height: 28px;
+    color: white;
 }
 
 .diamond-para-break {
@@ -68,5 +75,10 @@ a.no-underline {
 }
 
 .content{
-
+    background-image: url("bkgd.png");
+    background-size: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100vw;
 }
