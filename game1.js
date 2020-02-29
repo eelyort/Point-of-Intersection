@@ -203,13 +203,13 @@ function drawGameOverScreen(){
 	ctx.fillText("SCORE: " + score, canvas.width/8, canvas.height/3);
 	ctx.strokeText("SCORE: " + score, canvas.width/8, canvas.height/3);
 	
-	ctx.fillStyle = "black";
 	ctx.lineWidth = 1;
 	ctx.font = "64px avenir";
 	ctx.fillText("TAP ANYWHERE TO CONTINUE", canvas.width/50, canvas.height/2);
+	ctx.strokeText("TAP ANYWHERE TO CONTINUE", canvas.width/50, canvas.height/2);
 	
 	ctx.font = "30px avenir";
-	ctx.fillText("Version 1.5", 50, 50);
+	ctx.fillText("Version 1.6", 50, 50);
 }
 
 function drawLoadingMessage() {
