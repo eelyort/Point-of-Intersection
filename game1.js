@@ -22,11 +22,11 @@ document.addEventListener('touchstart', function(e){clickDetected();}, false);
 var pressedPlay = false;
 
 //Gameplay variables
-var groundY = 2300;
-var legX = 700;
+var groundY = 1300;
+var legX = 350;
 var legWidth = 200;
-var legHeight
-var legY = 1500;
+var legHeight = 800;
+var legY = groundY-legHeight;
 var leg_dY = 0;
 var shuttleCockDiameter = 200;
 var shuttleCockY = 50;
@@ -93,19 +93,15 @@ function draw() {
 	
 
 	//Handles leg falling back down after jumping up
-	if(legY+800 + leg_dY <= groundY){
+	if(legY+legHeight + leg_dY < groundY){
 		leg_dY += 4;
 	}else{
-		legY = groundY-800;
+		legY = groundY-legHeight;
 		leg_dY = 0;
 		alreadyClicked = false;
 		alreadyHitBall = false;
 	}
 	legY += leg_dY;
-	
-	/*if(Math.abs(legY+600 - shuttleCockY) < 50){
-		shuttleCock_dY = Math.floor(Math.random() * - 50) - 35;
-	}*/
 	
 	//ctx.drawImage(leg, 0, legY);
 	//ctx.drawImage(shuttleCock, 0, shuttleCockY);
@@ -122,13 +118,13 @@ function drawBall(){
 
 function drawLeg(){
 	ctx.beginPath();
-	ctx.rect(legX,legY,legWidth,800);
+	ctx.rect(legX,legY,legWidth,legHeight);
 	ctx.fillStyle = "black";
 	ctx.fill();
 	ctx.closePath();
 	
 	ctx.beginPath();
-	ctx.rect(legX,legY+600,legWidth,legWidth);
+	ctx.rect(legX,legY+legHeight-shuttleCockDiameter,legWidth,legWidth);
 	ctx.fillStyle = "blue";
 	ctx.fill();	
 	ctx.closePath();
@@ -164,7 +160,7 @@ function clickDetected(typeEvent){
 		if(typeEvent == "touch"){
 			tappedToReplay = true;
 		}
-		legY = 1500;
+		legY = groundY-legHeight;
 		leg_dY = 0;
 		shuttleCockY = 50;
 		shuttleCock_dY = 1;
