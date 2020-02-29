@@ -1,12 +1,13 @@
 body {
-    background-color: #FFA23F;
+    background-color: #ffffff;
     /*padding-top: 0px;*/
     /*margin-top: 0px;*/
     /*width: 1rem;*/
+    font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
 header {
-    background-color: #FF8300;
+    background-image: linear-gradient(to bottom, #ffffff, #ffffff, #ededed);
     width: 100vw;
     margin-left: -0.5em;
     margin-top: -1.25em;
@@ -15,11 +16,17 @@ header {
     /*top: 0;*/
     /*height: 6vh;*/
     height: 60px;
+    padding-bottom: 15px;
+    /*
+    border-bottom:1px solid #CCC;
+    */
 }
+
 header h1 {
     /*vertical-align: ;*/
     position: relative;
     text-align: center;
     top: 16px;
     font-size: 30px;
+    font-weight: lighter;
 }
