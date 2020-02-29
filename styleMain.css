@@ -13,6 +13,7 @@ canvas {
 
 html {
     scroll-behavior: smooth;
+    font-family: "Roboto Light", Helvetica, Arial, sans-serif;
 }
 
 .disable-dbl-tap-zoom {
@@ -106,22 +107,24 @@ a.no-underline {
     position: absolute;
     left: 80px;
     top: 440px;
+    background: -webkit-linear-gradient(#ffffff, #fff1c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #culture-food {
     position: absolute;
     right: 50px;
     top: 1280px;
+    background: -webkit-linear-gradient(#ffffff, #fff1c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #gameSection {
     position: absolute;
-    top: 3600px;
+    top: 3580px;
     right: 90px;
-}
-
-.noscroll {
-    overflow: hidden;
 }
 
 .footer {
@@ -206,7 +209,7 @@ a.no-underline {
     text-align: center;
     font-size: 30px;
     left: 185px;
-    margin-top: 4rem;
+    margin-top: 9rem;
     padding-top: 1rem;
     margin-left: 10rem;
 }
