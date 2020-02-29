@@ -47,7 +47,7 @@ function drawTimesTouched(){
 	ctx.font = "64px avenir";
 	ctx.fillStyle = "white";
 	
-	ctx.fillText("Times touched: " + tT, canvas.width/8, canvas.height/2);
+	ctx.fillText("Times touched: " + tT, canvas.width/8, canvas.height/3);
 }
 
 
@@ -63,6 +63,7 @@ function draw() {
 	//Draws leg and ball
 	drawLeg();
 	drawBall();
+	drawTimesTouched();
 	
 	if(tapToPlayScreenUp){
 		drawTapToStart();
@@ -149,14 +150,15 @@ function clickDetected(typeEvent){
 			if(typeEvent == "touch"){
 				afterTappedToReplay = true;
 				tT++;
-				drawTimesTouched();
 			}
 			return;
 		}
 			
 		tapToPlayScreenUp = false;
-		tT++;
-		drawTimesTouched();
+		if(typeEvent == "touch"){
+			tT++;
+		}
+	
 		
 		return;
 	}
