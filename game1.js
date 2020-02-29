@@ -143,6 +143,27 @@ function clickDetected(typeEvent){
 		return;
 	}
 	
+	if(gameOver){
+		if(typeEvent == "touch"){
+			tappedToReplay = true;
+		}
+		
+		legY = groundY-legHeight;
+		leg_dY = 0;
+		shuttleCockY = 50;
+		shuttleCock_dY = 1;
+		alreadyClicked = false;
+		alreadyHitBall = false;
+		gameOver = false;
+		//pressedPlay = false;
+		score = 0;
+		scoreboard.innerHTML = "Score: 0";
+
+		tapToPlayScreenUp = true;
+		
+		return;
+	}
+	
 	if(tapToPlayScreenUp){
 		
 		if(tappedToReplay){
@@ -169,26 +190,7 @@ function clickDetected(typeEvent){
 		return;
 	}
 	
-	if(gameOver){
-		if(typeEvent == "touch"){
-			tappedToReplay = true;
-		}
-		
-		legY = groundY-legHeight;
-		leg_dY = 0;
-		shuttleCockY = 50;
-		shuttleCock_dY = 1;
-		alreadyClicked = false;
-		alreadyHitBall = false;
-		gameOver = false;
-		//pressedPlay = false;
-		score = 0;
-		scoreboard.innerHTML = "Score: 0";
 
-		tapToPlayScreenUp = true;
-		
-		return;
-	}
 	
 	
 	leg_dY -= 45;
@@ -223,13 +225,13 @@ function drawGameOverScreen(){
 	ctx.strokeText("TAP ANYWHERE TO CONTINUE", canvas.width/50, canvas.height/2);
 	
 	ctx.font = "30px avenir";
-	ctx.fillText("Version 1.7", 50, 50);
+	ctx.fillText("Version 1.71", 50, 50);
 }
 
 function drawLoadingMessage() {
-	ctx.font = "32px Arial";
-	ctx.fillStyle = "black";
-	ctx.fillText("LOADING...", canvas.width/8, canvas.height/2);
+	ctx.font = "128px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText("LOADING...", canvas.width/11, canvas.height/2);
 }
 
 function startAnimating(fps) {
